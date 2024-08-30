@@ -144,14 +144,17 @@ define(['N/ui/serverWidget', 'N/https', 'N/file'],
                     });
                     function weatherDataFetch(location, date){
                         // let api1 = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/[' + location + ']/[' + date + ']?key=f197cb2982a2864db163ba69233d9a8801982233098ff291e6e7203464a43dce';
-                        let api = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+location+'/'+date+'?unitGroup=metric&key=f197cb2982a2864db163ba69233d9a8801982233098ff291e6e7203464a43dce&contentType=json'
-                        let response = https.get({
-                            url: api
+                        let headersRequest = { 'Content-Type': 'application/json'};
+                        let api = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+location+'/'+date+'/'+date+'/?unitGroup=metric&key=FSMLEAR6GSNWSGGTDC4FDU9P2&contentType=json'
+                        let response = https.request({
+                            method: https.Method.GET,
+                            url: api,
+                            headers: headersRequest
                         });
-                        log.debug('Output', response.body);
-                        let data = JSON.parse(response);
+                        log.debug('Output', api);
+                        let data = JSON.parse(response.body);
                         let weatherData = [];
-                        data.forEach(function(hour){
+                        data.hourly.forEach(function(hour){
                             weatherData.push({
                                 time: hour.time,
                                 temperature: hour.temp,

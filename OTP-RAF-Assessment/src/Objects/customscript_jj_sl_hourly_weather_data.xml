@@ -1,0 +1,25 @@
+<suitelet scriptid="customscript_jj_sl_hourly_weather_data">
+  <description></description>
+  <isinactive>F</isinactive>
+  <name>JJ SL Hourly Weather Data</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/JobinandJismi/Assessment/jj_sl_Hourly_Weather_Data.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_jj_sl_hourly_weather_data">
+      <allemployees>F</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>F</allroles>
+      <audslctrole></audslctrole>
+      <eventtype></eventtype>
+      <isdeployed>T</isdeployed>
+      <isonline>F</isonline>
+      <loglevel>DEBUG</loglevel>
+      <runasrole></runasrole>
+      <status>TESTING</status>
+      <title>JJ SL Hourly Weather Data</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</suitelet>
